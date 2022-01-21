@@ -47,8 +47,7 @@ html, body {
 }
 
 
-.chat-box {
-  display:none;
+.chat-box {  
   background: #efefef;
   position:fixed;
   left:50px;
@@ -61,17 +60,14 @@ html, body {
   box-shadow: 0px 0px 20px 0px #ccc;
   z-index: 1;  
   transform: translateY(5%);
-  transition: transform 5s ease-in-out;
-  transition-property: transform, opacity;
-  visibility: visible !important;
-  opacity: 0.5;
- 
+  transition: 0.2s ease-out;  
+  opacity: 0;
 }
-.chat-box.chat-box-active{
-  display: block;
-  transform: translateY(0%);
+.chat-box.chat-box-active{  
+  transform: translateY(0%);  
   opacity: 1;
-}
+  transition: 0.2s ease-out;
+}  
 
 
 .chat-box-toggle {
@@ -104,6 +100,14 @@ html, body {
   display: flex;
   justify-content: flex-start;
   margin-bottom: 15px;
+  transform: translateY(20%);
+  transition: 0.9s ease-out;  
+  opacity: 0;
+}
+.chat-box-active .chat_row{
+  transform: translateY(0%);
+  transition: 0.9s ease-out;  
+  opacity: 1;
 }
 .user_icon{
   width: 45px;
