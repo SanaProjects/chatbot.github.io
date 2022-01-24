@@ -19,20 +19,24 @@
   
 
   <div id="center-text">
-    <h2>ChatBox UI</h2>
+    <h2>Responsive ChatBox UI</h2>
     <p>Using HTML, CSS, Jquery </p>
   </div>
   <div id="body">
 
     <div id="chat-circle" class="btn btn-raised">
       <!-- Chat Icon -->
-
+      
+    </div>
+    <div id="chat-msg">
+      <p>May I help you?</p>
+      <span class="chat-msg-close">&times;</span>
     </div>
 
     <div class="chat-box">
       <div class="chat-box-header">
-        <span class="chat-box-toggle"><img src="images/refresh-icon.png" alt="close"></span>
         <span class="chat-box-toggle"><img src="images/close.png" alt="close"></span>
+        <span class="chat-box-refresh"><img src="images/refresh-icon.png" alt="refreh"></span>        
       </div>
       <div class="chat-box-body">
         <div class="chat-logs">
@@ -170,13 +174,21 @@
   <script>    
     $(document).ready(function () {
       $("#chat-circle").click(function () {
+        $("#chat-msg").hide();
         $(".chat-box").toggleClass('chat-box-active');
       });
-      
 
       $(".chat-box-toggle").click(function () {
         $(".chat-box").toggleClass('chat-box-active');
+      });
 
+      $(".chat-msg-close").click(function () {
+        $("#chat-msg").hide();
+      });
+
+      $("#chat-msg p").click(function () {
+        $("#chat-msg").hide();
+        $(".chat-box").toggleClass('chat-box-active');
       });
 
     })
